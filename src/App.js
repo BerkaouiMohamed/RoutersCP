@@ -2,6 +2,7 @@ import ListTodo from './comp/ListTodo';
 import AddTodo from './comp/AddTodo';
 import { useState } from 'react';
 import './App.css';
+import {Routes,Route,Link} from 'react-router-dom'
 
 function App() {
   const [jobs, setJobs] = useState([
@@ -9,12 +10,19 @@ function App() {
   ]);
 
   const add=(job)=>setJobs([...jobs,job])
-  return (
+  return (<>  <ul className='nav'>
+  <li><Link to='/add'>ADD</Link></li>
+  <li><Link to='/list'>LIST</Link></li>
+</ul>
     <div className="App">
-    <AddTodo add={add}/>
-    <ListTodo jobs={jobs} />
+     
 
+      <Routes>
+    <Route path='/add' element={ <AddTodo add={add}/>}/>
+    <Route path='/list' element={  <ListTodo jobs={jobs} />}/>
+   </ Routes>
     </div>
+    </>
   );
 }
 
