@@ -28,7 +28,3 @@ const cliq=()=>{setIsdone(!isdone);
     }
     export default Todo
 
-
-    Nested Routes with outlet
-The <Outlet> element is used as a placeholder. In this case an <Outlet>enables the Users component to render its child routes. Thus the<Outlet> element will render either a <Profile> or <Account> element depending on the current location.
-Let’s see the same example as before with outlet:
